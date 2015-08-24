@@ -35,9 +35,7 @@
 ; where do i get the fuzzy matching ???
 (require 'ido)
 (ido-mode 1)
-;;(setq ido-everywhere 1)
 (ido-everywhere 1)
-;;;;;(flx-ido-mode 1)
 (setq ido-use-faces nil)
 ;;(setq ido-enable-flex-matching t)
 
@@ -52,4 +50,3 @@
 ;; Recursive minibuffer
 (setq enable-recursive-minibuffers t)
 (minibuffer-depth-indicate-mode 1)
-
