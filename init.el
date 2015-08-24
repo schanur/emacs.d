@@ -1,6 +1,20 @@
-(require 'ert)
+;;(require 'ert)
 (require 'package)
+
+(setq package-archives '(("gnu"       . "http://elpa.gnu.org/packages/")
+			 ("marmalade" . "https://marmalade-repo.org/packages/")
+			 ("melpa"     . "http://melpa.org/packages/")))
+
 (package-initialize)
+
+(package-refresh-contents)
+
+(mapc
+ (lambda (package)
+   (unless (package-installed-p package)
+     (package-install package)))
+ '(irony company-irony flycheck-irony irony-eldoc company yasnippet rainbow-delimiters ido smex projectile whitespace ert hungry-delete))
+;; uniquify
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/manually/irony-mode/elisp/"))
 
@@ -79,14 +93,14 @@
 ;; hippie expand
 ;;(global-set-key (kbd "M-/") 'hippie-expand)
 ;; (setq hippie-expand-try-functions-list '(yas/hippie-try-expand
-					 ;; try-expand-dabbrev 
-					 ;; try-expand-dabbrev-all-buffers 
-					 ;; try-expand-dabbrev-from-kill 
-					 ;; try-complete-file-name-partially 
-					 ;; try-complete-file-name 
-					 ;; try-expand-all-abbrevs 
-					 ;; try-expand-list try-expand-line 
-					 ;; try-complete-lisp-symbol-partially 
+					 ;; try-expand-dabbrev
+					 ;; try-expand-dabbrev-all-buffers
+					 ;; try-expand-dabbrev-from-kill
+					 ;; try-complete-file-name-partially
+					 ;; try-complete-file-name
+					 ;; try-expand-all-abbrevs
+					 ;; try-expand-list try-expand-line
+					 ;; try-complete-lisp-symbol-partially
 					 ;; try-complete-lisp-symbol))
 
 ;(Add-Hook 'prog-mode-hook 'flycheck-mode)
