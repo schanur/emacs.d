@@ -3,3 +3,14 @@
 
 # Packaging
 .cask
+
+*~
+
+auto-save-list/
+elpa/
+ido.last
+irony/
+projectile-bookmarks.eld
+semanticdb/
+smex-items
+srecode-map.el
