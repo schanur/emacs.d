@@ -7,7 +7,7 @@
 
 (package-initialize)
 
-(package-refresh-contents)
+(unless package-archive-contents (package-refresh-contents))
 
 (mapc
  (lambda (package)
