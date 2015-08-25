@@ -1,4 +1,7 @@
-;;(require 'ert)
+;; Fix
+(require 'ert)
+
+
 (require 'package)
 
 (setq package-archives '(("gnu"       . "http://elpa.gnu.org/packages/")
