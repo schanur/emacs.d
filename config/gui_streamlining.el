@@ -50,3 +50,7 @@
 ;; Recursive minibuffer
 (setq enable-recursive-minibuffers t)
 (minibuffer-depth-indicate-mode 1)
+
+;; neotree
+(setq neo-window-width 40)
+(neotree-toggle)
