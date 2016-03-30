@@ -1,9 +1,9 @@
 (require 'company)
 
-(add-to-list 'company-backends 'company-c_headers)
+;; (add-to-list 'company-backends 'company-c_headers)
 
 ;; Load with `irony-mode` as a grouped backend
-(require 'company-irony-c-headers)
+;; (require 'company-irony-c-headers)
 
 (eval-after-load 'company
 '(add-to-list
