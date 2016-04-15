@@ -7,3 +7,6 @@
    (define-key neotree-mode-map (kbd "RET") 'neotree-enter-hide)))
 
 (global-set-key (kbd "<f9>") 'format-buffer)
+(global-set-key (kbd "<f9>") 'format-buffer)
+
+(global-set-key (kbd "<f12>") 'eval-buffer)
