@@ -9,6 +9,9 @@
 '(add-to-list
 'company-backends '(company-irony-c-headers company-irony)))
 
+(eval-after-load 'flycheck
+    '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+
 ;; When compiler options change, call
 ;; `company-irony-c-headers-reload-compiler-output` manually to
 ;; reload.
