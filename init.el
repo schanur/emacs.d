@@ -20,6 +20,7 @@
    company-irony
    emr
    ert
+   flx-ido
    flycheck-irony
    hungry-delete
    ido
