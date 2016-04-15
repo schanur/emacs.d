@@ -30,3 +30,6 @@ places
 tramp
 url/
 var/
+.#recentf
+anaconda-mode/
+projectile.cache
