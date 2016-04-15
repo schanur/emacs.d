@@ -34,9 +34,18 @@
 ; a lot of ui auto completion
 ; where do i get the fuzzy matching ???
 (require 'ido)
+(require 'flx-ido)
 (ido-mode 1)
 (ido-everywhere 1)
+(flx-ido-mode 1)
+;; disable ido faces to see flx highlights.
+(setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
+;; Old ido setup. FIXME: remove
+;; (ido-mode 1)
+;; (ido-everywhere 1)
+;; (setq ido-use-faces nil)
+
 ;;(setq ido-enable-flex-matching t)
 
 ;; ido like mode for M-x
