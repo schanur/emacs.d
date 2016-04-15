@@ -16,7 +16,25 @@
  (lambda (package)
    (unless (package-installed-p package)
      (package-install package)))
- '(irony company-irony flycheck-irony irony-eldoc company yasnippet rainbow-delimiters ido smex projectile whitespace ert hungry-delete robe projectile emr ruby-refactor srefactor))
+ '(company
+   company-irony
+   emr
+   ert
+   flycheck-irony
+   hungry-delete
+   ido
+   irony
+   irony-eldoc
+   neotree
+   projectile
+   projectile
+   rainbow-delimiters
+   robe
+   ruby-refactor
+   smex
+   srefactor
+   whitespace
+   yasnippet))
 ;; uniquify
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/manually/irony-mode/elisp/"))
