@@ -5,8 +5,8 @@
 (require 'package)
 
 (setq package-archives '(("gnu"       . "http://elpa.gnu.org/packages/")
-			 ("marmalade" . "https://marmalade-repo.org/packages/")
-			 ("melpa"     . "http://melpa.org/packages/")))
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa"     . "http://melpa.org/packages/")))
 
 (package-initialize)
 
@@ -61,9 +61,9 @@
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/manually/irony-mode/elisp/"))
 
-;(load "~/.emacs.d/init_auto-complete-clang.el")
+                                        ;(load "~/.emacs.d/init_auto-complete-clang.el")
 
-;(print 'ac-dictionary-directories)
+                                        ;(print 'ac-dictionary-directories)
 
 
 
@@ -115,48 +115,45 @@
 ;;; set the trigger key so that it can work together with yasnippet on tab key,
 ;;; if the word exists in yasnippet, pressing tab will cause yasnippet to
 ;;; activate, otherwise, auto-complete will
-;(ac-set-trigger-key "TAB")
-;(ac-set-trigger-key "<tab>")
+                                        ;(ac-set-trigger-key "TAB")
+                                        ;(ac-set-trigger-key "<tab>")
 
 ;; dirty fix for having AC everywhere
-;(define-globalized-minor-mode real-global-auto-complete-mode
-;  auto-complete-mode (lambda ()
-;                       (if (not (minibufferp (current-buffer)))
-;			   (auto-complete-mode 1))
-;		       ))
+                                        ;(define-globalized-minor-mode real-global-auto-complete-mode
+                                        ;  auto-complete-mode (lambda ()
+                                        ;                       (if (not (minibufferp (current-buffer)))
+                                        ;                          (auto-complete-mode 1))
+                                        ;                      ))
 
-;(require 'auto-complete-clang)
-;(define-key c++-mode-map (kbd "C-S-<return>") 'ac-complete-clang) ;; replace C-S-<return> with a key binding that you want
-;(define-key c++-mode-map (kbd "TAB") 'ac-complete-clang) ;; replace C-S-<return> with a key binding that you want
+                                        ;(require 'auto-complete-clang)
+                                        ;(define-key c++-mode-map (kbd "C-S-<return>") 'ac-complete-clang) ;; replace C-S-<return> with a key binding that you want
+                                        ;(define-key c++-mode-map (kbd "TAB") 'ac-complete-clang) ;; replace C-S-<return> with a key binding that you want
 
 
-;(real-global-auto-complete-mode t)
+                                        ;(real-global-auto-complete-mode t)
 
 
 ;; hippie expand
 ;;(global-set-key (kbd "M-/") 'hippie-expand)
 ;; (setq hippie-expand-try-functions-list '(yas/hippie-try-expand
-					 ;; try-expand-dabbrev
-					 ;; try-expand-dabbrev-all-buffers
-					 ;; try-expand-dabbrev-from-kill
-					 ;; try-complete-file-name-partially
-					 ;; try-complete-file-name
-					 ;; try-expand-all-abbrevs
-					 ;; try-expand-list try-expand-line
-					 ;; try-complete-lisp-symbol-partially
-					 ;; try-complete-lisp-symbol))
+;; try-expand-dabbrev
+;; try-expand-dabbrev-all-buffers
+;; try-expand-dabbrev-from-kill
+;; try-complete-file-name-partially
+;; try-complete-file-name
+;; try-expand-all-abbrevs
+;; try-expand-list try-expand-line
+;; try-complete-lisp-symbol-partially
+;; try-complete-lisp-symbol))
 
-;(Add-Hook 'prog-mode-hook 'flycheck-mode)
-;(add-hook 'text-mode-hook 'flycheck-mode)
+                                        ;(Add-Hook 'prog-mode-hook 'flycheck-mode)
+                                        ;(add-hook 'text-mode-hook 'flycheck-mode)
 
 ;;;;;(require 'doc-mode)
 ;;;;;(add-hook 'c-mode-common-hook doc-mode)
 
 (define-key prog-mode-map (kbd "M-RET") 'emr-show-refactor-menu)
 (eval-after-load "emr" '(emr-initialize))
-
-
-(hungry-delete-mode)
 
 
 ;; Recursively load all config files.
@@ -201,14 +198,29 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#000000" "#8b0000" "#00ff00" "#ffa500" "#7b68ee" "#dc8cc3" "#93e0e3" "#dcdccc"])
+ '(compilation-message-face (quote default))
  '(custom-safe-themes
    (quote
-    ("94ba29363bfb7e06105f68d72b268f85981f7fba2ddef89331660033101eb5e5" "9b402e9e8f62024b2e7f516465b63a4927028a7055392290600b776e4a5b9905" "705f3f6154b4e8fac069849507fd8b660ece013b64a0a31846624ca18d6cf5e1" "a1289424bbc0e9f9877aa2c9a03c7dfd2835ea51d8781a0bf9e2415101f70a7e" "ad950f1b1bf65682e390f3547d479fd35d8c66cafa2b8aa28179d78122faa947" "87a7e23d0a43222336abde73c34deebe144ff4ddf78e1e4222008a809448b8c5" "e15e15c389b9a2f813bb3b8034f0777bbfb1f80b2349c5c98a84b9d807275fac" "1c50040ec3b3480b1fec3a0e912cac1eb011c27dd16d087d61e72054685de345" "71ecffba18621354a1be303687f33b84788e13f40141580fa81e7840752d31bf" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "bcc6775934c9adf5f3bd1f428326ce0dcd34d743a92df48c128e6438b815b44f" "4c9ba94db23a0a3dea88ee80f41d9478c151b07cb6640b33bfc38be7c2415cc4" "f3d6a49e3f4491373028eda655231ec371d79d6d2a628f08d5aa38739340540b" "4f5bb895d88b6fe6a983e63429f154b8d939b4a8c581956493783b2515e22d6d" "7beac4a68f03662b083c9c2d4f1d7f8e4be2b3d4b0d904350a9edf3cf7ce3d7f" "beeb5ac6b65fcccfe434071d4624ff0308b5968bf2f0c01b567d212bcaf66054" "6998bd3671091820a6930b52aab30b776faea41449b4246fdce14079b3e7d125" "c987721d93f0858a2eec882e58c5c45b67d6492bfadae3e00c115ba2616b7fe0" "561ba4316ba42fe75bc07a907647caa55fc883749ee4f8f280a29516525fc9e8" "c86f868347919095aa44d2a6129dd714cbcf8feaa88ba954f636295b14ceff8f" "8fed5e4b89cf69107d524c4b91b4a4c35bcf1b3563d5f306608f0c48f580fdf8" "83e584d74b0faea99a414a06dae12f11cd3176fdd4eba6674422539951bcfaa8" "7abf5a28ec511e7e8f5fe10978b3d63058bbd280ed2b8d513f9dd8b7f5fc9400" "ba6f8606cae826654d4c2242363f2042dd35c1595ef6367ad44d5f42851e6aa9" "90d329edc17c6f4e43dbc67709067ccd6c0a3caa355f305de2041755986548f2" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "ed5af4af1d148dc4e0e79e4215c85e7ed21488d63303ddde27880ea91112b07e" "fc01bb8da59411baec19563336db6afc0cd872931388a363aa2effee4a426e35" "7bde52fdac7ac54d00f3d4c559f2f7aa899311655e7eb20ec5491f3b5c533fe8" "90edd91338ebfdfcd52ecd4025f1c7f731aced4c9c49ed28cfbebb3a3654840b" "cdd26fa6a8c6706c9009db659d2dffd7f4b0350f9cc94e5df657fa295fffec71" default)))
+    ("c93fabc360a4b2adb84cc7ab70a717a990777452ab0328b23812c779ff274154" "0f98f9c2f1241c3b6227af48dc96e708ec023dd68363edb5d36dc7beaad64c23" "94ba29363bfb7e06105f68d72b268f85981f7fba2ddef89331660033101eb5e5" "9b402e9e8f62024b2e7f516465b63a4927028a7055392290600b776e4a5b9905" "705f3f6154b4e8fac069849507fd8b660ece013b64a0a31846624ca18d6cf5e1" "a1289424bbc0e9f9877aa2c9a03c7dfd2835ea51d8781a0bf9e2415101f70a7e" "ad950f1b1bf65682e390f3547d479fd35d8c66cafa2b8aa28179d78122faa947" "87a7e23d0a43222336abde73c34deebe144ff4ddf78e1e4222008a809448b8c5" "e15e15c389b9a2f813bb3b8034f0777bbfb1f80b2349c5c98a84b9d807275fac" "1c50040ec3b3480b1fec3a0e912cac1eb011c27dd16d087d61e72054685de345" "71ecffba18621354a1be303687f33b84788e13f40141580fa81e7840752d31bf" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "bcc6775934c9adf5f3bd1f428326ce0dcd34d743a92df48c128e6438b815b44f" "4c9ba94db23a0a3dea88ee80f41d9478c151b07cb6640b33bfc38be7c2415cc4" "f3d6a49e3f4491373028eda655231ec371d79d6d2a628f08d5aa38739340540b" "4f5bb895d88b6fe6a983e63429f154b8d939b4a8c581956493783b2515e22d6d" "7beac4a68f03662b083c9c2d4f1d7f8e4be2b3d4b0d904350a9edf3cf7ce3d7f" "beeb5ac6b65fcccfe434071d4624ff0308b5968bf2f0c01b567d212bcaf66054" "6998bd3671091820a6930b52aab30b776faea41449b4246fdce14079b3e7d125" "c987721d93f0858a2eec882e58c5c45b67d6492bfadae3e00c115ba2616b7fe0" "561ba4316ba42fe75bc07a907647caa55fc883749ee4f8f280a29516525fc9e8" "c86f868347919095aa44d2a6129dd714cbcf8feaa88ba954f636295b14ceff8f" "8fed5e4b89cf69107d524c4b91b4a4c35bcf1b3563d5f306608f0c48f580fdf8" "83e584d74b0faea99a414a06dae12f11cd3176fdd4eba6674422539951bcfaa8" "7abf5a28ec511e7e8f5fe10978b3d63058bbd280ed2b8d513f9dd8b7f5fc9400" "ba6f8606cae826654d4c2242363f2042dd35c1595ef6367ad44d5f42851e6aa9" "90d329edc17c6f4e43dbc67709067ccd6c0a3caa355f305de2041755986548f2" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "ed5af4af1d148dc4e0e79e4215c85e7ed21488d63303ddde27880ea91112b07e" "fc01bb8da59411baec19563336db6afc0cd872931388a363aa2effee4a426e35" "7bde52fdac7ac54d00f3d4c559f2f7aa899311655e7eb20ec5491f3b5c533fe8" "90edd91338ebfdfcd52ecd4025f1c7f731aced4c9c49ed28cfbebb3a3654840b" "cdd26fa6a8c6706c9009db659d2dffd7f4b0350f9cc94e5df657fa295fffec71" default)))
  '(fci-rule-color "#383838")
+ '(highlight-changes-colors (quote ("#ff8eff" "#ab7eff")))
+ '(highlight-tail-colors
+   (quote
+    (("#424748" . 0)
+     ("#63de5d" . 20)
+     ("#4BBEAE" . 30)
+     ("#1DB4D0" . 50)
+     ("#9A8F21" . 60)
+     ("#A75B00" . 70)
+     ("#F309DF" . 85)
+     ("#424748" . 100))))
  '(linum-format " %5i ")
+ '(magit-diff-use-overlays nil)
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
+ '(pos-tip-background-color "#E6DB74")
+ '(pos-tip-foreground-color "#242728")
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
    (quote
@@ -231,6 +243,8 @@
      (340 . "#00a74e")
      (360 . "#d33682"))))
  '(vc-annotate-very-old-color "#d33682")
+ '(weechat-color-list
+   (unspecified "#242728" "#424748" "#F70057" "#ff0066" "#86C30D" "#63de5d" "#BEB244" "#E6DB74" "#40CAE4" "#06d8ff" "#FF61FF" "#ff8eff" "#00b2ac" "#53f2dc" "#f8fbfc" "#ffffff"))
  '(when
       (or
        (not

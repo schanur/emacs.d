@@ -3,3 +3,5 @@
 ;; 'prog-mode-hook 'refill-mode)
 
 (global-flycheck-mode)
+
+(hungry-delete-mode)
