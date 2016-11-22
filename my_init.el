@@ -37,8 +37,11 @@
    rainbow-delimiters
    robe
    ruby-refactor
+   schrute
    smex
    srefactor
+   web-mode
+   web-mode-edit-element
    whitespace
    yasnippet)
  )
@@ -54,6 +57,7 @@
    atom-one-dark-theme
    badger-theme
    cyberpunk-theme
+   darkane-theme
    hc-zenburn-theme
    hipster-theme
    seti-theme
@@ -176,6 +180,30 @@
 
 (load-directory "~/.emacs.d/custom")
 (load-directory "~/.emacs.d/config")
+
+(setq custom-safe-themes t)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("1c50040ec3b3480b1fec3a0e912cac1eb011c27dd16d087d61e72054685de345" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(whitespace-tab ((t (:background "red")))))
+
+;; (when (display-graphic-p)
+;;   (load-theme 'hipster t)
+;;     )
+
+;;(add-hook 'after-init-hook (lambda () (load-theme 'solarized-light)))
+(add-hook 'after-init-hook (lambda () (load-theme 'hipster)))
 
 ;;'(default ((t (:background nil))))
 ;;'(whitespace-tab ((t (:background "red")))))
