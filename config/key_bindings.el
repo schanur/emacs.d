@@ -1,3 +1,9 @@
+;;; package --- Summary
+
+;;; Commentary:
+
+;;; Code:
+
 (global-set-key (kbd "<f6>") 'toggle-menu-bar-mode-from-frame)
 (global-set-key (kbd "<f7>") 'neotree-toggle)
 

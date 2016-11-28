@@ -1,3 +1,9 @@
+;;; package --- Summary
+
+;;; Commentary:
+
+;;; Code:
+
 ;; (defun wrap-comment-prog-mode-hook
 ;;     (setq fill-column 72)
 ;;   (set (make-local-variable 'comment-auto-fill-only-comments) t)

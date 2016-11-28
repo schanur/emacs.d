@@ -1,3 +1,9 @@
+;;; package --- Summary
+
+;;; Commentary:
+
+;;; Code:
+
 ;; Delete trailing spaces on file save operation.
 (add-hook 'before-save-hook 'whitespace-cleanup)
 

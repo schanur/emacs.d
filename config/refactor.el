@@ -1,3 +1,9 @@
+;;; package --- Summary
+
+;;; Commentary:
+
+;;; Code:
+
 ;; (require 'ruby-refactor)
 ;; (require 'emr)
 

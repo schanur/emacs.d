@@ -1,3 +1,9 @@
+;;; package --- Summary
+
+;;; Commentary:
+
+;;; Code:
+
 (defun replace-string-buffer (search-replace-pair)
   "Replace all instances of a string with another string"
   (interactive)

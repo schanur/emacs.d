@@ -1,6 +1,11 @@
+;;; package --- Summary
 
-(require 'company)
+;;; Commentary:
 
-(add-to-list 'company-backends 'company-anaconda)
-(add-hook 'python-mode-hook 'anaconda-mode)
+;;; Code:
+
+;; (require 'company)
+
+;; (add-to-list 'company-backends 'company-anaconda)
+;; (add-hook 'python-mode-hook 'anaconda-mode)
 

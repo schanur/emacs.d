@@ -1,3 +1,9 @@
+;;; package --- Summary
+
+;;; Commentary:
+
+;;; Code:
+
 
 ;; in default Emacs, themes can be kind of stacked.
 ;; Dissable this behavior.

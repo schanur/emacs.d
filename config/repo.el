@@ -1,3 +1,9 @@
+;;; package --- Summary
+
+;;; Commentary:
+
+;;; Code:
+
 (require 'package)
 (package-initialize)
 (setq package-archives '(("gnu"       . "http://elpa.gnu.org/packages/")

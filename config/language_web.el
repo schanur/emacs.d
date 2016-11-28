@@ -1,3 +1,9 @@
+;;; package --- Summary
+
+;;; Commentary:
+
+;;; Code:
+
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'"     . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -16,7 +22,7 @@
 
 ;; It provides a few helper-functions for attribute- and element-handling based on the functions given by web-mode. Further more it provides functions for slurping, barfing, dissolving, raising ... elements inspired by ParEdit and Paxedit. Last but not least this package includes a minor mode to provide a keymap with default bindings using commands of web-mode and this package.
 
-To use this package, add the following lines somewhere in you init file:
+;; To use this package, add the following lines somewhere in you init file:
 (require 'web-mode-edit-element)
 (add-hook 'web-mode-hook 'web-mode-edit-element-minor-mode)
 

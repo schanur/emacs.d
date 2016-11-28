@@ -1,3 +1,11 @@
+;;; package --- Summary
+
+;;; Commentary:
+
+;;; Code:
+
+(message "my_init: start:")
+
 ;; Fix
 (require 'ert)
 
@@ -19,6 +27,7 @@
      (package-install package)))
  '(company
    company-irony
+   company-irony-c-headers
    emr
    ert
    flx-ido
@@ -178,8 +187,6 @@
        ((and (eq isdir nil) (string= (substring path -3) ".el"))
         (load (file-name-sans-extension fullpath)))))))
 
-(load-directory "~/.emacs.d/custom")
-(load-directory "~/.emacs.d/config")
 
 (setq custom-safe-themes t)
 
@@ -198,14 +205,20 @@
  ;; If there is more than one, they won't work right.
  '(whitespace-tab ((t (:background "red")))))
 
+;; (load-theme 'hipster)
+
+(load-directory "~/.emacs.d/custom")
+(load-directory "~/.emacs.d/config")
+
 ;; (when (display-graphic-p)
 ;;   (load-theme 'hipster t)
 ;;     )
 
 ;;(add-hook 'after-init-hook (lambda () (load-theme 'solarized-light)))
-(add-hook 'after-init-hook (lambda () (load-theme 'hipster)))
+;; (add-hook 'after-init-hook (lambda () (load-theme 'hipster)))
 
 ;;'(default ((t (:background nil))))
 ;;'(whitespace-tab ((t (:background "red")))))
 
 (setq tramp-default-method "ssh")
+

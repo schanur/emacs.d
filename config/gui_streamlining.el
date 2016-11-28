@@ -1,3 +1,9 @@
+;;; package --- Summary
+
+;;; Commentary:
+
+;;; Code:
+
 ;; Emacs's default scrolling behavior, like a lot of the default
 ;; Emacs experience, is pretty idiosyncratic. The following snippet
 ;; makes for a smoother scrolling behavior when using keyboard navigation.

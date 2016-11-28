@@ -1,3 +1,9 @@
+;;; package --- Summary
+
+;;; Commentary:
+
+;;; Code:
+
 
 ;; Do not run the garbage collector that often.
 ;; Both conditions have to be true before a

@@ -1,3 +1,9 @@
+;;; package --- Summary
+
+;;; Commentary:
+
+;;; Code:
+
 ;; Emacs project managaement
 ;;;;;(require 'projectile)
 ;;;;;(projectile-global-mode)
