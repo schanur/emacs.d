@@ -9,7 +9,6 @@
 ;; Fix
 (require 'ert)
 
-
 (require 'package)
 
 (setq package-archives '(("gnu"       . "http://elpa.gnu.org/packages/")
@@ -212,7 +211,7 @@
 
 ;; (when (display-graphic-p)
 ;;   (load-theme 'hipster t)
-;;     )
+;;   )
 
 ;;(add-hook 'after-init-hook (lambda () (load-theme 'solarized-light)))
 ;; (add-hook 'after-init-hook (lambda () (load-theme 'hipster)))
