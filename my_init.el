@@ -28,6 +28,10 @@
    company-flx
    company-irony
    company-irony-c-headers
+   company-qml
+   company-racer
+   company-shell
+   company-statistics
    company-tern
    emr
    ert
