@@ -66,6 +66,10 @@
    yasnippet)
  )
 ;; uniquify
+;; ivy-rich
+;; indent-tools
+;; importmagic
+;; bln-mode
 
 ;; Install themes
 (mapc
