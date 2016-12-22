@@ -27,3 +27,12 @@
 (add-hook 'web-mode-hook 'web-mode-edit-element-minor-mode)
 
 ;; See keymap in the main file or online https://github.com/jtkDvlp/web-mode-edit-element
+
+
+(require  'js2-refactor)
+(add-hook 'js2-mode-hook #'js2-refactor-mode)
+(js2r-add-keybindings-with-prefix "C-c C-m")
+
+
+(eval-after-load "js2-highlight-vars-autoloads"
+  '(add-hook 'js2-mode-hook (lambda () (js2-highlight-vars-mode))))

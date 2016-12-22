@@ -25,8 +25,10 @@
    (unless (package-installed-p package)
      (package-install package)))
  '(company
+   company-flx
    company-irony
    company-irony-c-headers
+   company-tern
    emr
    ert
    flx-ido
@@ -35,6 +37,12 @@
    ido
    irony
    irony-eldoc
+   js2-closure
+   js2-highlight-vars
+   js2-mode
+   js2-refactor
+   js-comint
+   jade
    magit
    magit-find-file
    magit-gitflow
