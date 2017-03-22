@@ -46,7 +46,6 @@
    js2-mode
    js2-refactor
    js-comint
-   jade
    magit
    magit-find-file
    magit-gitflow
@@ -65,6 +64,9 @@
    whitespace
    yasnippet)
  )
+;;   jade - requires Emacs 25
+
+
 ;; uniquify
 ;; ivy-rich
 ;; indent-tools
