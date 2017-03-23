@@ -11,9 +11,9 @@
 
 (require 'package)
 
-(setq package-archives '(("gnu"       . "http://elpa.gnu.org/packages/")
+(setq package-archives '(("gnu"       . "https://elpa.gnu.org/packages/")
                          ("marmalade" . "https://marmalade-repo.org/packages/")
-                         ("melpa"     . "http://melpa.org/packages/")))
+                         ("melpa"     . "https://melpa.org/packages/")))
 
 (package-initialize)
 
@@ -46,7 +46,6 @@
    js2-mode
    js2-refactor
    js-comint
-   jade
    magit
    magit-find-file
    magit-gitflow
@@ -66,6 +65,9 @@
    whitespace
    yasnippet)
  )
+;;   jade - requires Emacs 25
+
+
 ;; uniquify
 ;; ivy-rich
 ;; indent-tools
@@ -84,7 +86,6 @@
    cyberpunk-theme
    darkane-theme
    hc-zenburn-theme
-   hipster-theme
    madhat2r-theme
    seti-theme
    spacemacs-theme

@@ -12,4 +12,4 @@
 ;; (setq custom-enabled-themes "hipster")
 ;; (setq custom-safe-themes "hipster")
 ;; (custom-safe-themes 'hipster-theme)
-(load-theme 'hipster)
+(load-theme 'zenburn)
