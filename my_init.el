@@ -52,6 +52,7 @@
    magit-gitflow
    magit-svn
    neotree
+   origami
    projectile
    projectile
    rainbow-delimiters

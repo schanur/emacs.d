@@ -11,3 +11,8 @@
 (global-flycheck-mode)
 
 (hungry-delete-mode)
+
+(require 'origami)
+
+(global-origami-mode)
+
