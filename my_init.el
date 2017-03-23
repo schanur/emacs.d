@@ -85,6 +85,7 @@
    darkane-theme
    hc-zenburn-theme
    hipster-theme
+   madhat2r-theme
    seti-theme
    spacemacs-theme
    zenburn-theme
