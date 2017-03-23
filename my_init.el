@@ -85,7 +85,6 @@
    cyberpunk-theme
    darkane-theme
    hc-zenburn-theme
-   hipster-theme
    seti-theme
    spacemacs-theme
    zenburn-theme
