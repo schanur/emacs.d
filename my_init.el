@@ -51,6 +51,7 @@
    magit-gitflow
    magit-svn
    neotree
+   nv-delete-back
    origami
    projectile
    projectile

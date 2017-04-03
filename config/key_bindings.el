@@ -44,3 +44,8 @@
 (global-set-key (kbd "C-c C-f f") 'origami-show-only-node)    ;; f for focus
 
 
+;; (bind-key "C-<backspace>" 'nv-delete-back-all)
+;; (bind-key "M-<backspace>" 'nv-delet-back)
+(require 'nv-delete-back)
+(global-set-key (kbd "C-<backspace>") 'nv-delete-back-all)
+(global-set-key (kbd "M-<backspace>") 'nv-delet-back)
