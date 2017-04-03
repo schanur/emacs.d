@@ -24,7 +24,8 @@
  (lambda (package)
    (unless (package-installed-p package)
      (package-install package)))
- '(company
+ '(bitbake
+   company
    company-flx
    company-irony
    company-irony-c-headers
