@@ -21,3 +21,5 @@
 ;; When compiler options change, call
 ;; `company-irony-c-headers-reload-compiler-output` manually to
 ;; reload.
+
+(require 'xcscope)

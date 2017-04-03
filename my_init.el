@@ -64,6 +64,7 @@
    web-mode
    web-mode-edit-element
    whitespace
+   xcscope
    yasnippet)
  )
 ;;   jade - requires Emacs 25
