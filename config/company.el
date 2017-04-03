@@ -6,14 +6,15 @@
 
 (require 'company)
 
-(require 'company-qml)
+;; (require 'company-qml)
 (require 'company-racer)
 
 (with-eval-after-load 'company
   (add-to-list 'company-backends
                'company-racer
                'company-shell
-               'company-qml))
+               ))
+;; 'company-qml
 
 (add-to-list 'company-backends 'company-tern)
 

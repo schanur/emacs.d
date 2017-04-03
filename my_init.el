@@ -29,7 +29,6 @@
    company-flx
    company-irony
    company-irony-c-headers
-   company-qml
    company-racer
    company-shell
    company-statistics
@@ -68,7 +67,9 @@
    xcscope
    yasnippet)
  )
-;;   jade - requires Emacs 25
+;;requires Emacs 25
+;;   jade -  
+;;   company-qml
 
 
 ;; uniquify
