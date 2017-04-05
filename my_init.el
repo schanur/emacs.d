@@ -24,11 +24,11 @@
  (lambda (package)
    (unless (package-installed-p package)
      (package-install package)))
- '(company
+ '(bitbake
+   company
    company-flx
    company-irony
    company-irony-c-headers
-   company-qml
    company-racer
    company-shell
    company-statistics
@@ -51,6 +51,7 @@
    magit-gitflow
    magit-svn
    neotree
+   nv-delete-back
    origami
    projectile
    projectile
@@ -63,9 +64,12 @@
    web-mode
    web-mode-edit-element
    whitespace
+   xcscope
    yasnippet)
  )
-;;   jade - requires Emacs 25
+;;requires Emacs 25
+;;   jade -  
+;;   company-qml
 
 
 ;; uniquify
