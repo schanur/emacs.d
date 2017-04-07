@@ -68,7 +68,7 @@
    yasnippet)
  )
 ;;requires Emacs 25
-;;   jade -  
+;;   jade -
 ;;   company-qml
 
 
@@ -87,6 +87,7 @@
    atom-dark-theme
    atom-one-dark-theme
    badger-theme
+   challenger-deep-theme
    cyberpunk-theme
    darkane-theme
    hc-zenburn-theme
