@@ -48,4 +48,4 @@
 ;; (bind-key "M-<backspace>" 'nv-delet-back)
 (require 'nv-delete-back)
 (global-set-key (kbd "C-<backspace>") 'nv-delete-back-all)
-(global-set-key (kbd "M-<backspace>") 'nv-delet-back)
+(global-set-key (kbd "M-<backspace>") 'nv-delete-back)
