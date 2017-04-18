@@ -33,6 +33,7 @@
    company-shell
    company-statistics
    company-tern
+   company-rtags
    emr
    ert
    flx-ido
