@@ -13,3 +13,8 @@
 ;; (setq custom-safe-themes "hipster")
 ;; (custom-safe-themes 'hipster-theme)
 (load-theme 'zenburn)
+
+(custom-set-faces
+ ;; '(neo-dir-link-face ((t (:foreground "yellow"))))
+ '(neo-dir-link-face ((t (:foreground "color-64"))))
+ '(neo-file-link-face ((t (:foreground "color-244")))))
