@@ -34,6 +34,7 @@
    company-statistics
    company-tern
    company-rtags
+   diff-hl
    emr
    ert
    flx-ido
