@@ -52,6 +52,7 @@
    magit-find-file
    magit-gitflow
    magit-svn
+   markdown-mode
    neotree
    nv-delete-back
    origami
@@ -63,6 +64,7 @@
    schrute
    smex
    srefactor
+   use-package
    web-mode
    web-mode-edit-element
    whitespace
