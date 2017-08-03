@@ -69,3 +69,9 @@
 ;; neotree
 (setq neo-window-width 32)
 (neotree-toggle)
+
+;; Disable toolbar
+(tool-bar-mode -1)
+
+;; Disable scrollbars
+(scroll-bar-mode -1)
