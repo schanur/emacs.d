@@ -67,5 +67,5 @@
 (minibuffer-depth-indicate-mode 1)
 
 ;; neotree
-(setq neo-window-width 40)
+(setq neo-window-width 32)
 (neotree-toggle)
