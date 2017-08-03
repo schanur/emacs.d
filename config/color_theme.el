@@ -24,7 +24,7 @@
 
 ;; (set-color-theme-by-current-month(sunny-month-list high-contrast-theme low-contrast-theme)
 
-(custom-set-faces
+;; (custom-set-faces
  ;; '(neo-dir-link-face ((t (:foreground "yellow"))))
  ;; '(neo-dir-link-face ((t (:foreground "color-64"))))
  ;; '(neo-file-link-face ((t (:foreground "color-244")))))
