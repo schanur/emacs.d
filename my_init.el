@@ -212,7 +212,8 @@
        ((and (eq isdir t) (not ignore-dir))
         (load-directory fullpath))
        ((and (eq isdir nil) (string= (substring path -3) ".el"))
-        (load (file-name-sans-extension fullpath)))))))
+	(write-region (format "%s\n" fullpath) nil "/tmp/emacs_start.log" 'append)
+	(load (file-name-sans-extension fullpath)))))))
 
 
 (setq custom-safe-themes t)
