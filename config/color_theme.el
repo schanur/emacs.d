@@ -14,7 +14,15 @@
 ;; (custom-safe-themes 'hipster-theme)
 
 
+;; We use a high contrast theme in the summer and a low contrast theme in the winter
+
+;; (setq sunny-month-list    '(Apr May June July Aug Sept Oct))
+;; (setq high-contrast-theme 'badger)
+;; (setq low-contrast-theme  'zenburn)
+
 (load-theme 'badger)
+
+;; (set-color-theme-by-current-month(sunny-month-list high-contrast-theme low-contrast-theme)
 
 (custom-set-faces
  ;; '(neo-dir-link-face ((t (:foreground "yellow"))))
