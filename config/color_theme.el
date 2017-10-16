@@ -29,3 +29,22 @@
  ;; '(neo-dir-link-face ((t (:foreground "yellow"))))
  ;; '(neo-dir-link-face ((t (:foreground "color-64"))))
  ;; '(neo-file-link-face ((t (:foreground "color-244")))))
+
+
+;; Make flycheck a bit more alarming by using different background
+;; colors instead of different font colors.
+;; flycheck-error
+;; flycheck-error-list-checker-name
+;; flycheck-error-list-column-number
+;; flycheck-error-list-error
+;; flycheck-error-list-highlight
+;; flycheck-error-list-id
+;; flycheck-error-list-id-with-explainer
+;; flycheck-error-list-info
+;; flycheck-error-list-line-number
+;; flycheck-error-list-warning
+;; flycheck-fringe-error
+;; flycheck-fringe-info
+;; flycheck-fringe-warning
+;; flycheck-info
+;; flycheck-warning
