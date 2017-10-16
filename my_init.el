@@ -106,8 +106,11 @@
    badger-theme
    challenger-deep-theme
    cyberpunk-theme
+   exotica-theme
+   green-is-the-new-black-theme
    hc-zenburn-theme
    madhat2r-theme
+   nyx-theme
    seti-theme
    spacemacs-theme
    zenburn-theme
