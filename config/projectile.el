@@ -4,6 +4,8 @@
 
 ;;; Code:
 
-(require 'projectile)
 
-(projectile-global-mode)
+;;; Projectile support is currently disabled duo to performance regression.
+;;;
+;; (require 'projectile)
+;; (projectile-global-mode)
