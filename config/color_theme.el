@@ -20,7 +20,8 @@
 ;; (setq high-contrast-theme 'badger)
 ;; (setq low-contrast-theme  'zenburn)
 
-(load-theme 'badger)
+(add-hook 'after-init-hook (lambda () (load-theme 'badger)))
+;; (load-theme 'badger)
 
 ;; (set-color-theme-by-current-month(sunny-month-list high-contrast-theme low-contrast-theme)
 
