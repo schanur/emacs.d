@@ -24,9 +24,11 @@
  (lambda (package)
    (unless (package-installed-p package)
      (package-install package)))
- '(bitbake
+ '(anaconda-mode
+   bitbake
    cargo
    company
+   company-anaconda
    company-flx
    company-irony
    company-irony-c-headers
@@ -36,6 +38,7 @@
    company-tern
    company-rtags
    diff-hl
+   elpy
    emr
    ert
    flx-ido
@@ -69,6 +72,7 @@
    schrute
    smex
    srefactor
+   systemd
    use-package
    web-mode
    web-mode-edit-element
