@@ -70,7 +70,9 @@
 (setq neo-window-width 32)
 (neotree-toggle)
 
-;; Disable toolbar
+;; Disable menu-bar and tool-bar
+;; TODO: What exactly is the tool-bar?
+(menu-bar-mode -1)
 (tool-bar-mode -1)
 
 ;; Disable scrollbars
