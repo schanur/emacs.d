@@ -25,6 +25,7 @@
    (unless (package-installed-p package)
      (package-install package)))
  '(bitbake
+   cargo
    company
    company-flx
    company-irony
@@ -38,6 +39,7 @@
    emr
    ert
    flx-ido
+   flycheck-rust
    flycheck-irony
    hungry-delete
    ido
@@ -58,9 +60,12 @@
    origami
    projectile
    projectile
+   racer
    rainbow-delimiters
    robe
    ruby-refactor
+   rust-mode
+   rust-playground
    schrute
    smex
    srefactor
@@ -81,6 +86,10 @@
 ;; indent-tools
 ;; importmagic
 ;; bln-mode
+
+;; Unstable rust packages
+;; lsp-rust
+;; ob-rust
 
 ;; Install themes
 (mapc
