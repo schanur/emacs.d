@@ -4,6 +4,14 @@
 
 ;;; Code:
 
+(global-set-key (kbd "<f2>") 'origami-open-all-nodes)
+(global-set-key (kbd "<f3>") 'origami-close-all-nodes)
+;; (global-set-key (kbd "<f4>") 'origami-toggle-node)
+;; (global-set-key (kbd "<f4>") 'origami-forward-toggle-node)
+(global-set-key (kbd "<f4>") 'origami-open-node-recursively)
+
+
+
 (global-set-key (kbd "<f6>") 'toggle-menu-bar-mode-from-frame)
 (global-set-key (kbd "<f7>") 'neotree-toggle)
 (global-set-key (kbd "<f8>") 'global-linum-mode)
