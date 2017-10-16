@@ -93,7 +93,6 @@
    badger-theme
    challenger-deep-theme
    cyberpunk-theme
-   darkane-theme
    hc-zenburn-theme
    madhat2r-theme
    seti-theme
