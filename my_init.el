@@ -100,7 +100,9 @@
  (lambda (package)
    (unless (package-installed-p package)
      (package-install package)))
- '(ample-theme
+ '(abyss-theme
+   alect-themes
+   ample-theme
    atom-dark-theme
    atom-one-dark-theme
    badger-theme
@@ -109,10 +111,13 @@
    exotica-theme
    green-is-the-new-black-theme
    hc-zenburn-theme
+   kaolin-themes
    madhat2r-theme
    nyx-theme
    seti-theme
+   soothe-theme
    spacemacs-theme
+   sunburn-theme
    zenburn-theme
    zerodark-theme)
  )
