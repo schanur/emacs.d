@@ -95,6 +95,9 @@
 ;; lsp-rust
 ;; ob-rust
 
+;; smart-backspace
+;; smart-semicolon
+
 ;; Install themes
 (mapc
  (lambda (package)
