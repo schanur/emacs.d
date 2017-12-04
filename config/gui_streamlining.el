@@ -82,3 +82,9 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
+;; Set fonts
+;; (set-face-attribute 'default   nil :font "Terminus-Bold-18")
+(set-face-attribute 'default   nil :font "Terminus-14")
+;; (set-face-attribute 'default   nil :font "Fira Code-13")
+(set-face-attribute 'mode-line nil :font "Terminus-8")
