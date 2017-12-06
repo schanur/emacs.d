@@ -32,6 +32,7 @@
    company-flx
    company-irony
    company-irony-c-headers
+   company-php
    company-racer
    company-shell
    company-statistics
@@ -61,6 +62,8 @@
    neotree
    nv-delete-back
    origami
+   php-mode
+   php-refactor-mode
    projectile
    projectile
    racer
