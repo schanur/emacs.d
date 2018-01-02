@@ -59,6 +59,7 @@
    magit-gitflow
    magit-svn
    markdown-mode
+   meson-mode
    neotree
    nv-delete-back
    origami
