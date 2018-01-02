@@ -75,7 +75,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
-;; Disable scrollbars
+;; Disable scroll bars
 (scroll-bar-mode -1)
 
 ;; Activate "recent files" mode
