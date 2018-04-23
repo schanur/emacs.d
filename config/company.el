@@ -7,13 +7,14 @@
 (require 'company)
 
 ;; (require 'company-qml)
-(require 'company-racer)
+;; (require 'company-racer)
 
-(with-eval-after-load 'company
-  (add-to-list 'company-backends
-               'company-racer
-               'company-shell
-               ))
+
+;; (with-eval-after-load 'company
+;;   (add-to-list 'company-backends
+;;                'company-racer
+;;                'company-shell
+;;                ))
 ;; 'company-qml
 
 (add-to-list 'company-backends 'company-tern)
@@ -43,3 +44,6 @@
 
 (with-eval-after-load 'company
   (company-flx-mode +1))
+
+(require 'company-lsp)
+(push 'company-lsp company-backends)
