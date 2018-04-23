@@ -40,3 +40,6 @@ var/
 anaconda-mode/
 projectile.cache
 recentf
+
+Emacs backups
+\#*\#
