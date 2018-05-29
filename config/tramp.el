@@ -3,3 +3,7 @@
 ;; fails on machines without uuencode/base64 support. We want to use
 ;; scp always.
 (setq tramp-copy-size-limit nil)
+
+
+;; Use login credentials strore.
+(setq auth-source '("~/.authinfo.pgp" "~/.authinfo" "~/.authinfo"))
