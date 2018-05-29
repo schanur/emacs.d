@@ -26,7 +26,8 @@
 
 (setq ring-bell-function 'ignore)
 
-(setq linum-format "%4d\u2502")
+(setq linum-format "%4d\u2502    ")
+;; (setq linum-format "%d  ")
 
 (global-linum-mode)
 (setq column-number-mode t)
