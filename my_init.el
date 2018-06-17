@@ -122,12 +122,17 @@
    atom-one-dark-theme
    badger-theme
    challenger-deep-theme
+   color-theme-solarized
    cyberpunk-theme
+   doom-themes
    exotica-theme
    green-is-the-new-black-theme
    hc-zenburn-theme
    kaolin-themes
    madhat2r-theme
+   material-theme
+   moe-theme
+   monokai-theme
    nyx-theme
    seti-theme
    soothe-theme
