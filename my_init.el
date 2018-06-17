@@ -72,7 +72,6 @@
    origami
    php-mode
    php-refactor-mode
-   projectile
    powerthesaurus
    projectile
    racer
