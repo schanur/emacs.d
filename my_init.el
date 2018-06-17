@@ -90,8 +90,9 @@
    web-mode-edit-element
    whitespace
    xcscope
-   yasnippet)
    visual-regexp
+   yasnippet
+   yasnippet-snippets)
  )
 ;;requires Emacs 25
 ;;   jade -
