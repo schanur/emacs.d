@@ -91,6 +91,7 @@
    whitespace
    xcscope
    yasnippet)
+   visual-regexp
  )
 ;;requires Emacs 25
 ;;   jade -
