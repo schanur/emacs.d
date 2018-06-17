@@ -46,6 +46,9 @@
    flx-ido
    flycheck-rust
    flycheck-irony
+   gitattributes-mode
+   gitconfig-mode
+   gitignore-mode
    hungry-delete
    ido
    irony
