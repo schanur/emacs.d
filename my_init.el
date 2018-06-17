@@ -72,6 +72,7 @@
    origami
    php-mode
    php-refactor-mode
+   paradox
    powerthesaurus
    projectile
    racer
