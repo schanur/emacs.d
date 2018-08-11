@@ -85,7 +85,12 @@
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 ;; Set fonts
-;; (set-face-attribute 'default   nil :font "Terminus-Bold-18")
-(set-face-attribute 'default   nil :font "Terminus-14")
-;; (set-face-attribute 'default   nil :font "Fira Code-13")
+(set-face-attribute 'default   nil :font "Ubuntu Mono-17")
+;; (set-face-attribute 'default   nil :font "Ubuntu Mono-20")
+;; (set-face-attribute 'default   nil :font "Terminus-20")
+;; (set-face-attribute 'default   nil :font "Terminus-17")
+;; (set-face-attribute 'default   nil :font "Fira Code-16")
+;; (set-face-attribute 'default   nil :font "Fira Code-16")
+;; (set-face-attribute 'default   nil :font "Fira Code-20")
+
 (set-face-attribute 'mode-line nil :font "Terminus-8")
