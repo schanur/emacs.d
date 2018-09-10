@@ -49,6 +49,24 @@
    gitattributes-mode
    gitconfig-mode
    gitignore-mode
+   helm
+   helm-ag
+   helm-cscope
+   helm-c-yasnippet
+   helm-dash
+   helm-dictionary
+   helm-flx
+   helm-flycheck
+   helm-flyspell
+   helm-fuzzier
+   helm-fuzzy-find
+   helm-flycheck
+   helm-gtags
+   helm-projectile
+   helm-rg
+   helm-rtags
+   helm-themes
+   helm-tramp
    hungry-delete
    ido
    irony
