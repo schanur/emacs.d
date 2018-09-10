@@ -39,6 +39,7 @@
    company-statistics
    company-tern
    company-rtags
+   company-web
    diff-hl
    elpy
    emr
