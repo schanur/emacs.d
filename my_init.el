@@ -142,6 +142,7 @@
    atom-dark-theme
    atom-one-dark-theme
    badger-theme
+   brutalist-theme
    challenger-deep-theme
    color-theme-solarized
    cyberpunk-theme
