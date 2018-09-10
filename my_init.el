@@ -94,6 +94,7 @@
    paradox
    powerthesaurus
    projectile
+   projectile-ripgrep
    racer
    rainbow-delimiters
    robe
