@@ -23,6 +23,8 @@
 (add-hook 'after-init-hook (lambda () (load-theme 'badger)))
 ;; (load-theme 'badger)
 
+(set-cursor-color "#ffffff")
+
 ;; (set-color-theme-by-current-month(sunny-month-list high-contrast-theme low-contrast-theme)
 
 ;; (custom-set-faces
