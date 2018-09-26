@@ -104,6 +104,7 @@
    schrute
    smex
    srefactor
+   ssh-deploy
    systemd
    use-package
    web-mode
