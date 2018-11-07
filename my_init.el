@@ -148,6 +148,7 @@
    brutalist-theme
    challenger-deep-theme
    color-theme-solarized
+   constant-theme
    cyberpunk-theme
    doom-themes
    exotica-theme
