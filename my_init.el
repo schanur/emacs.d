@@ -41,6 +41,7 @@
    company-rtags
    company-web
    diff-hl
+   dtrt-indent
    elpy
    emr
    ert
@@ -78,6 +79,7 @@
    js2-refactor
    js-comint
    lsp-rust
+   lsp-sh
    lsp-ui
    lsp-vue
    magit
