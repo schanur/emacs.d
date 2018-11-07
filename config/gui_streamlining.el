@@ -55,6 +55,8 @@
 
 ;;(setq ido-enable-flex-matching t)
 
+(setq custom-safe-themes t)
+
 ;; ido like mode for M-x
 (require 'smex)
 (smex-initialize)
