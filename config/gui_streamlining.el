@@ -89,9 +89,14 @@
 (setq recentf-max-menu-items 25)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
-;; (if (> (display-pixel-width) 1080)
-;;     (set-face-attribute 'default   nil :font "Terminus-36")
-;;   (set-face-attribute 'default   nil :font "Terminus-14"))
+;; Set fonts
+(set-face-attribute 'default   nil :font "Ubuntu Mono-17")
+;; (set-face-attribute 'default   nil :font "Ubuntu Mono-20")
+;; (set-face-attribute 'default   nil :font "Terminus-20")
+;; (set-face-attribute 'default   nil :font "Terminus-17")
+;; (set-face-attribute 'default   nil :font "Fira Code-16")
+;; (set-face-attribute 'default   nil :font "Fira Code-16")
+;; (set-face-attribute 'default   nil :font "Fira Code-20")
 
 (if (> (display-pixel-width) 1080)
     (set-face-attribute 'default   nil :font "Ubuntu Mono-27")
