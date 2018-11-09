@@ -98,7 +98,8 @@
 ;; (set-face-attribute 'default   nil :font "Fira Code-16")
 ;; (set-face-attribute 'default   nil :font "Fira Code-20")
 
-(if (> (display-pixel-width) 1080)
+;; Use larger font on screens larger than WUXGA.
+(if (> (display-pixel-height) 1200)
     (set-face-attribute 'default   nil :font "Ubuntu Mono-27")
   (set-face-attribute 'default   nil :font "Ubuntu Mono-17"))
 
