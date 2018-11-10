@@ -9,3 +9,4 @@
 ;;;
 (require 'projectile)
 (projectile-global-mode)
+(setq projectile-keymap-prefix (kbd "C-c C-p"))
