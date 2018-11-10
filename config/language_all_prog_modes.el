@@ -12,7 +12,10 @@
 
 (hungry-delete-mode)
 
+;; Text folding.
 (require 'origami)
-
 (global-origami-mode)
+
+;; What to hightlight in Flycheck.
+
 
