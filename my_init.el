@@ -115,7 +115,9 @@
    xcscope
    visual-regexp
    yasnippet
-   yasnippet-snippets)
+   yasnippet-snippets
+   zzz-to-char
+   )
  )
 ;;requires Emacs 25
 ;;   jade -
