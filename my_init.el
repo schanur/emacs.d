@@ -42,6 +42,7 @@
    company-web
    diff-hl
    dtrt-indent
+   eglot ;; required by rustic
    elpy
    emr
    ert
@@ -64,6 +65,7 @@
    helm-fuzzy-find
    helm-flycheck
    helm-gtags
+   helm-lsp
    helm-projectile
    helm-rg
    helm-rtags
@@ -101,7 +103,7 @@
    rainbow-delimiters
    robe
    ruby-refactor
-   rust-mode
+   rustic
    rust-playground
    schrute
    smex

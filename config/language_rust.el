@@ -1,19 +1,25 @@
 
 
-(require 'rust-mode)
+;; (require 'rust-mode)
 
 ;; (setenv "RUST_SRC_PATH" ${HOME}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src)
+
+;; ********************************************************************
+;; * Rustic                                                 *
+;; ********************************************************************
+(use-package rustic)
+(setq rustic-rls-pkg 'eglot)
 
 ;; ********************************************************************
 ;; * Rust by lsp-rust                                                 *
 ;; ********************************************************************
 
-(with-eval-after-load 'lsp-mode
-  (require 'lsp-rust)
-  (add-hook 'rust-mode-hook #'lsp-rust-enable))
+;; (with-eval-after-load 'lsp-mode
+;;   (require 'lsp-rust)
+;;   (add-hook 'rust-mode-hook #'lsp-rust-enable))
 
-(add-hook 'rust-mode-hook #'lsp-rust-enable)
-(add-hook 'rust-mode-hook #'flycheck-mode)
+;; (add-hook 'rust-mode-hook #'lsp-rust-enable)
+;; (add-hook 'rust-mode-hook #'flycheck-mode)
 
 ;; ********************************************************************
 ;; * Racer                                                            *
