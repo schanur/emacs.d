@@ -4,25 +4,25 @@
 
 ;;; Code:
 
-(global-set-key (kbd "<f2>") 'origami-open-all-nodes)
-(global-set-key (kbd "<f3>") 'origami-close-all-nodes)
-;; (global-set-key (kbd "<f4>") 'origami-toggle-node)
-;; (global-set-key (kbd "<f4>") 'origami-forward-toggle-node)
-(global-set-key (kbd "<f4>") 'origami-open-node-recursively)
+(global-set-key (kbd "<f2>")  'origami-open-all-nodes)
+(global-set-key (kbd "<f3>")  'origami-close-all-nodes)
+;; (global-set-key (kbd "<f4>")  'origami-toggle-node)
+;; (global-set-key (kbd "<f4>")  'origami-forward-toggle-node)
+(global-set-key (kbd "<f4>")  'origami-open-node-recursively)
 
 
 
-(global-set-key (kbd "<f6>") 'toggle-menu-bar-mode-from-frame)
-(global-set-key (kbd "<f7>") 'neotree-toggle)
-(global-set-key (kbd "<f8>") 'global-linum-mode)
+(global-set-key (kbd "<f6>")  'toggle-menu-bar-mode-from-frame)
+(global-set-key (kbd "<f7>")  'neotree-toggle)
+(global-set-key (kbd "<f8>")  'global-linum-mode)
 
 (add-hook
  'neotree-mode-hook
  (lambda ()
    (define-key neotree-mode-map (kbd "RET") 'neotree-enter-hide)))
 
-(global-set-key (kbd "<f9>") 'format-buffer)
-(global-set-key (kbd "<f9>") 'format-buffer)
+(global-set-key (kbd "<f9>")  'flycheck-next-error)
+(global-set-key (kbd "<f10>") 'format-buffer)
 
 (global-set-key (kbd "<f12>") 'eval-buffer)
 
