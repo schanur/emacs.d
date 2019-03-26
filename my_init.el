@@ -147,6 +147,7 @@
  '(abyss-theme
    alect-themes
    ample-theme
+   arc-dark-theme
    atom-dark-theme
    atom-one-dark-theme
    badger-theme
@@ -155,10 +156,12 @@
    color-theme-solarized
    constant-theme
    cyberpunk-theme
+   cyberpunk-2019-theme
    doom-themes
    exotica-theme
    green-is-the-new-black-theme
    hc-zenburn-theme
+   immaterial-theme
    kaolin-themes
    madhat2r-theme
    material-theme
