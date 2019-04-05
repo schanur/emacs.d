@@ -21,6 +21,7 @@ semanticdb/
 smex-items
 srecode-map.el
 request/
+transient/
 
 \#init.el\#
 .\#.gitignore
