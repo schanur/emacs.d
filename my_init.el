@@ -46,6 +46,7 @@
    elpy
    emr
    ert
+   esup ;; Startup profiler.
    flx-ido
    flycheck-rust
    flycheck-irony
