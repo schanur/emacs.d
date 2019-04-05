@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-;; Hide startup screen
+;; Hide startup screen.
 (setq inhibit-splash-screen t)
 
 ;; Emacs's default scrolling behavior, like a lot of the default
@@ -29,12 +29,18 @@
 
 (setq ring-bell-function 'ignore)
 
-(setq linum-format "%4d\u2502    ")
-;; (setq linum-format "%d  ")
+(if (version<= "26.0.50" emacs-version)
+    (global-display-line-numbers-mode)
+  (
+   (setq linum-format "%4d\u2502    ")
+   ;; (setq linum-format "%d  ")
 
-;; Activate line numbers in all programming mode. Using
-;; (global-linum-mode) took too much space in minimap buffer.
-(add-hook 'prog-mode-hook 'linum-mode)
+   ;; Activate line numbers in all programming mode. Using
+   ;; (global-linum-mode) took too much space in minimap buffer.
+   (add-hook 'prog-mode-hook 'linum-mode)
+   )
+  )
+
 
 (setq column-number-mode t)
 

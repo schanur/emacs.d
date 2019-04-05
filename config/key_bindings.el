@@ -14,7 +14,11 @@
 
 (global-set-key (kbd "<f6>")  'toggle-menu-bar-mode-from-frame)
 (global-set-key (kbd "<f7>")  'neotree-toggle)
-(global-set-key (kbd "<f8>")  'global-linum-mode)
+
+(if (version<= "26.0.50" emacs-version)
+    (global-set-key (kbd "<f8>")  'global-display-line-numbers-mode)
+  (  global-set-key (kbd "<f8>")  'global-linum-mode)
+  )
 
 (add-hook
  'neotree-mode-hook
