@@ -114,6 +114,7 @@
    use-package
    web-mode
    web-mode-edit-element
+   which-key
    whitespace
    xcscope
    visual-regexp
