@@ -168,6 +168,8 @@
    madhat2r-theme
    material-theme
    moe-theme
+   mood-one-theme
+   monokai-pro-theme
    monokai-theme
    nyx-theme
    seti-theme
