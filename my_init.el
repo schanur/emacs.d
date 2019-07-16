@@ -175,6 +175,7 @@
    mood-one-theme
    monokai-pro-theme
    monokai-theme
+   naysayer-theme
    nyx-theme
    seti-theme
    soothe-theme
