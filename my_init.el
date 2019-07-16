@@ -192,6 +192,13 @@
 (eval-after-load "emr" '(emr-initialize))
 
 
+(defvar log-file-path "/dev/shm/emacs")
+(defvar log-file      (concat log-file-path "emacs_start.log"))
+
+;; Create directory for log file in RAM.
+(unless (file-directory-p log-file-path)
+  (make-directory log-file-path))
+
 ;; Recursively load all config files.
 (defun load-directory (directory)
   "Load recursively all `.el' files in DIRECTORY."
@@ -204,8 +211,8 @@
        ((and (eq isdir t) (not ignore-dir))
         (load-directory fullpath))
        ((and (eq isdir nil) (string= (substring path -3) ".el"))
-	(write-region (format "%s\n" fullpath) nil "/tmp/emacs_start.log" 'append)
-	(load (file-name-sans-extension fullpath)))))))
+        (write-region (format "%s\n" fullpath) nil log-file 'append)
+        (load (file-name-sans-extension fullpath)))))))
 
 
 (custom-set-variables
@@ -224,3 +231,4 @@
 
 (setq tramp-default-method "ssh")
 
+(write-region (format "my_init.el load finished\n") nil log-file 'append)
