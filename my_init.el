@@ -42,6 +42,7 @@
    company-web
    diff-hl
    dtrt-indent
+   dumb-jump
    eglot ;; required by rustic
    elpy
    emr

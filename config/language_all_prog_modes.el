@@ -16,6 +16,8 @@
 (require 'origami)
 (global-origami-mode)
 
+(dumb-jump-mode)
+
 ;; What to hightlight in Flycheck.
 
 
