@@ -5,7 +5,10 @@
 ;;; Code:
 
 ;; Hide startup screen.
-(setq inhibit-splash-screen t)
+(setq inhibit-splash-screen   t)
+(setq inhibit-startup-screen  t)
+(setq initial-scratch-message "")
+
 
 ;; Emacs's default scrolling behavior, like a lot of the default
 ;; Emacs experience, is pretty idiosyncratic. The following snippet
