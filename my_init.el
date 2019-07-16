@@ -94,6 +94,7 @@
    meson-mode
    neotree
    nv-delete-back
+   opencl-mode
    origami
    php-mode
    php-refactor-mode
