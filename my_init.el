@@ -104,6 +104,8 @@
    projectile-ripgrep
    racer
    rainbow-delimiters
+   realgud
+   realgud-lldb
    robe
    ruby-refactor
    rustic
