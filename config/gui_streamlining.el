@@ -83,7 +83,7 @@
 
 ;; neotree
 (setq neo-window-width 32)
-(neotree-toggle)
+;; (neotree-toggle)
 
 ;; Disable menu-bar and tool-bar
 ;; TODO: What exactly is the tool-bar?
