@@ -5,7 +5,6 @@
 ;;; Code:
 
 
-
 (setq
  backup-by-copying t                           ; don't clobber symlinks
  backup-directory-alist
@@ -14,6 +13,3 @@
  kept-new-versions 6
  kept-old-versions 2
  version-control t)                            ; use versioned backups
-
-;;(setq make-backup-files nil)                    ; WARNING! dissable all backup files
-

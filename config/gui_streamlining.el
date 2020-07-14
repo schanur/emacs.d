@@ -4,36 +4,83 @@
 
 ;;; Code:
 
-;; Hide startup screen.
-(setq inhibit-splash-screen   t)
-(setq inhibit-startup-screen  t)
-(setq initial-scratch-message "")
+
+;; ;; Reopen all buffers from last session.
+;; (setq desktop-dirname             "~/.emacs.d/"
+;;       desktop-base-file-name      "emacs.desktop"
+;;       desktop-base-lock-name      "lock"
+;;       desktop-path                (list desktop-dirname)
+;;       desktop-save                t
+;;       desktop-files-not-to-save   "^$" ;reload tramp paths
+;;       desktop-load-locked-desktop nil
+;;       desktop-restore-eager       1
+;;       desktop-auto-save-timeout   30)
+;; ;;(desktop-save-mode 1)
 
 
-;; Emacs's default scrolling behavior, like a lot of the default
-;; Emacs experience, is pretty idiosyncratic. The following snippet
-;; makes for a smoother scrolling behavior when using keyboard navigation.
+;; Replaced by dashboard package.
+;; ;; Hide startup screen.
+;; (setq inhibit-splash-screen   t)
+;; (setq inhibit-startup-screen  t)
+;; (setq initial-scratch-message "")
+
+
+(use-package dashboard
+    :ensure t
+    :diminish dashboard-mode
+    :config
+    (setq dashboard-banner-logo-title "schanur")
+    ;; (setq dashboard-startup-banner nil)
+    (setq dashboard-startup-banner 2)
+    ;; (setq dashboard-startup-banner "/path/to/image")
+    (setq dashboard-items '((recents   . 15)
+                            (projects  . 8)
+                            (bookmarks . 3)
+                            (agenda    . 3)
+                            (registers . 3)
+                            ))
+    ;; (setq dashboard-set-footer nil)
+    (dashboard-setup-startup-hook))
+
+
+;; Disable menu-bar and tool-bar
+;; TODO: What exactly is the tool-bar?
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
+
+;; Disable scroll bars
+(scroll-bar-mode -1)
+
+
+;; Better scrolling behaviour.
 (setq redisplay-dont-pause t
-      scroll-margin 1
-      scroll-step 1
+      scroll-margin 0
+      ;; scroll-step 1
       scroll-conservatively 10000
       scroll-preserve-screen-position 1)
+
 
 ;; This snippet makes mouse wheel and trackpad scrolling bearable. Scroll
 ;; in 1-line increments the buffer under the mouse.
 (setq mouse-wheel-follow-mouse 't)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 
-;; Buffer names
-;; Setup uniquify so that non-unique buffer names get the parent path
-;; included to make them unique.
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'forward)
+
+;; (require 'uniquify)
+;; (setq uniquify-buffer-name-style 'forward)
+
 
 (setq ring-bell-function 'ignore)
 
+
 (if (version<= "26.0.50" emacs-version)
-    (global-display-line-numbers-mode)
+    (progn
+      (global-display-line-numbers-mode)
+      (set-face-background 'line-number              "#000000")
+      (set-face-foreground 'line-number              "#272727")
+      (set-face-foreground 'line-number-current-line "#505050")
+      )
   (
    (setq linum-format "%4d\u2502    ")
    ;; (setq linum-format "%d  ")
@@ -45,75 +92,92 @@
   )
 
 
+;; Marked region is dark red.
+(set-face-attribute 'region nil :background "#411")
+
+
+;; Highlight the current line.
+(global-hl-line-mode)
+;; (set-face-background 'highlight-current-line-face "#000000")
+(set-face-background 'hl-line "#101010")
+
+
+;; Show both, column and row.
 (setq column-number-mode t)
 
-;; highlight the other bracket
-(show-paren-mode)    ; emacs builtin
+;; ;; Set fonts
+;; ;; (set-face-attribute 'default   nil :font "Ubuntu Mono-17")
+;; (set-face-attribute 'default   nil :font "Ubuntu Mono-28")
+;; ;; (set-face-attribute 'default   nil :font "Terminus-20")
+;; ;; (set-face-attribute 'default   nil :font "Terminus-17")
+;; ;; (set-face-attribute 'default   nil :font "Fira Code-16")
+;; ;; (set-face-attribute 'default   nil :font "Fira Code-16")
+;; ;; (set-face-attribute 'default   nil :font "Fira Code-20")
 
-(require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode) ; activate rainbow mode for all programming modes
+;; ; Use smaller font on screens smaller than 1280x800.
+;; (if (< (display-pixel-height) 800)
+;;     (set-face-attribute 'default   nil :font "Ubuntu Mono-27")
+;;   (set-face-attribute 'default   nil :font "Ubuntu Mono-17"))
 
-; a lot of ui auto completion
-; where do i get the fuzzy matching ???
-(require 'ido)
-(require 'flx-ido)
-(ido-mode 1)
-(ido-everywhere 1)
-(flx-ido-mode 1)
-;; disable ido faces to see flx highlights.
-(setq ido-enable-flex-matching t)
-(setq ido-use-faces nil)
-;; Old ido setup. FIXME: remove
-;; (ido-mode 1)
-;; (ido-everywhere 1)
-;; (setq ido-use-faces nil)
+;; ;; Use larger font on screens larger than WUXGA.
+;; (if (> (display-pixel-height) 1200)
+;;     (set-face-attribute 'default   nil :font "Ubuntu Mono-27")
+;;   (set-face-attribute 'default   nil :font "Ubuntu Mono-17"))
 
-;;(setq ido-enable-flex-matching t)
+;; (set-face-attribute 'default   nil :font "Terminus-14")
+;; ;; (set-face-attribute 'default   nil :font "Terminus-20")
+;; (set-face-attribute 'default   nil :font "Terminus-24")
+;; ;; (set-face-attribute 'default   nil :font "Terminus-Bold-18")
 
-(setq custom-safe-themes t)
+;; ;; (set-face-attribute 'default   nil :font "Fira Code-23")
 
-;; ido like mode for M-x
-(require 'smex)
-(smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; original M-x command
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
-;; Recursive minibuffer
-(setq enable-recursive-minibuffers t)
-(minibuffer-depth-indicate-mode 1)
+;; (use-package undo-tree
+;;   :diminish undo-tree-mode
+;;   :straight t
 
-;; neotree
-(setq neo-window-width 32)
-;; (neotree-toggle)
+;;   :preface
+;;   (eval-when-compile
+;;     (declare-function global-undo-tree-mode nil))
 
-;; Disable menu-bar and tool-bar
-;; TODO: What exactly is the tool-bar?
-(menu-bar-mode -1)
-(tool-bar-mode -1)
+;;   :bind
+;;   ("C-." . ))
+;;   ;; :init
+;;   ;; (with-eval-after-load 'evil-leader
+;;   ;;   (evil-leader/set-key
+;;   ;;     "uv" 'undo-tree-visualize))
 
-;; Disable scroll bars
-(scroll-bar-mode -1)
+;;   :config
+;;   (unless (file-exists-p "~/.emacs.d/undo")
+;;     (make-directory "~/.emacs.d/undo"))
+;;   (global-undo-tree-mode t))
 
-;; Activate "recent files" mode
-(recentf-mode 1)
-(setq recentf-max-menu-items 25)
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
-;; Set fonts
-(set-face-attribute 'default   nil :font "Ubuntu Mono-17")
-;; (set-face-attribute 'default   nil :font "Ubuntu Mono-20")
-;; (set-face-attribute 'default   nil :font "Terminus-20")
-;; (set-face-attribute 'default   nil :font "Terminus-17")
-;; (set-face-attribute 'default   nil :font "Fira Code-16")
-;; (set-face-attribute 'default   nil :font "Fira Code-16")
-;; (set-face-attribute 'default   nil :font "Fira Code-20")
+;; super useful for demos
+(use-package keycast
+  :ensure t)
 
-;; Use larger font on screens larger than WUXGA.
-(if (> (display-pixel-height) 1200)
-    (set-face-attribute 'default   nil :font "Ubuntu Mono-27")
-  (set-face-attribute 'default   nil :font "Ubuntu Mono-17"))
 
-;; (set-face-attribute 'default   nil :font "Fira Code-13")
 
+;; temporarily highlight changes from yanking, etc
+(use-package volatile-highlights
+  :ensure t
+  :config
+  (volatile-highlights-mode +1))
+
+
+
+;; Show search summary in mode lien (for example results found in
+;; current buffer).
+(use-package anzu
+  :ensure t
+  :bind (("M-%" . anzu-query-replace)
+         ("C-M-%" . anzu-query-replace-regexp))
+  :config
+  (global-anzu-mode))
+
+
+
+;; TODO: Move to other config file.
+;; Newline at end of file
+(setq require-final-newline t)

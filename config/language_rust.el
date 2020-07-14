@@ -1,38 +1,28 @@
 
+;; (add-hook 'rust-mode-hook 'flycheck-mode)
 
-;; (require 'rust-mode)
+;; (define-key yas-minor-mode-map [(tab)] nil)
+;; (define-key yas-minor-mode-map (kbd "TAB") nil)
 
-;; (setenv "RUST_SRC_PATH" ${HOME}/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src)
 
-;; ********************************************************************
-;; * Rustic                                                 *
-;; ********************************************************************
-(use-package rustic)
-(setq rustic-rls-pkg 'eglot)
+(setq lsp-rust-server 'rust-analyzer) ;; deprecated
+(setq rustic-lsp-server 'rust-analyzer)
+(setq lsp-prefer-capf t)
+;; Rustic, LSP
 
-;; ********************************************************************
-;; * Rust by lsp-rust                                                 *
-;; ********************************************************************
+(use-package flycheck
+  :ensure t
+  )
 
-;; (with-eval-after-load 'lsp-mode
-;;   (require 'lsp-rust)
-;;   (add-hook 'rust-mode-hook #'lsp-rust-enable))
+(use-package rustic
+  :ensure t
+  )
 
-;; (add-hook 'rust-mode-hook #'lsp-rust-enable)
-;; (add-hook 'rust-mode-hook #'flycheck-mode)
+(use-package lsp-ui
+  :ensure t
+  )
 
-;; ********************************************************************
-;; * Racer                                                            *
-;; ********************************************************************
-
-;; (require 'rust-mode)
-
-;; (setq racer-rust-src-path (substitute-in-file-name "$HOME/.cargo/bin"))
-
-;; (add-hook 'rust-mode-hook #'racer-mode)
-;; (add-hook 'racer-mode-hook #'eldoc-mode)
-
-;; ;; Use company for racer completion.
-;; (add-hook 'racer-mode-hook #'company-mode)
-;; (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
-;; (setq company-tooltip-align-annotations t)
+(use-package helm-lsp
+  :ensure t
+  :config
+  (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))

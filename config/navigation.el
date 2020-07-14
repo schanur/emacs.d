@@ -1,7 +1,3 @@
-;;; package --- Summary
-
-;;; Commentary:
-
-;;; Code:
-
-(global-set-key (kbd "M-z") #'zzz-to-char)
+;; (use-package expand-region
+;;   :ensure t
+;;   :bind ("C-=" . er/expand-region))

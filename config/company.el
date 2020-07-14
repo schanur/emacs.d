@@ -1,49 +1,57 @@
-;;; package --- Summary
+(use-package company
+  :demand t
+  :diminish company-mode
 
-;;; Commentary:
+  :preface
+  (eval-when-compile
+    (declare-function global-company-mode nil))
 
-;;; Code:
+  :init
+  (setq company-idle-delay 0.1)
+  (setq company-minimum-prefix-length 2)
+  (setq company-require-match nil)
+  (setq company-dabbrev-downcase nil)
+  (setq company-selection-wrap-around t)
+  (setq company-tooltip-flip-when-above t)
+  (setq company-tooltip-align-annotations t)
 
-(require 'company)
+  :bind
+  (:map company-active-map
+   ("TAB"      . company-complete-common-or-cycle)
+   ([tab]      . company-complete-common-or-cycle)
+   ("S-TAB"    . company-select-previous-or-abort)
+   ([backtab]  . company-select-previous-or-abort)
+   ([S-tab]    . company-select-previous-or-abort)
+   ("C-p"      . company-select-previous-or-abort)
+   ("C-n"      . company-select-next-or-abort)
+   ("C-l"      . company-complete-selection))
 
-;; (require 'company-qml)
-;; (require 'company-racer)
-
-
-;; (with-eval-after-load 'company
-;;   (add-to-list 'company-backends
-;;                'company-racer
-;;                'company-shell
-;;                ))
-;; 'company-qml
-
-(add-to-list 'company-backends 'company-tern)
-
-(require 'company-statistics)
-(company-statistics-mode)
-
-
-;;; Web mode
-(add-to-list 'company-backends 'company-web-html)
-(add-to-list 'company-backends 'company-web-jade)
-(add-to-list 'company-backends 'company-web-slim)
-
-;;; or, for example, setup web-mode-hook:
-
-;; (define-key web-mode-map (kbd "C-'") 'company-web-html)
-;; (add-hook 'web-mode-hook (lambda ()
-;;                            (set (make-local-variable 'company-backends) '(company-web-html company-files))
-;;                            (company-mode t)))
+  :config
+  (global-company-mode t)
+  ;; (global-company-fuzzy-mode 1)
+  )
 
 
-;;; Global options.
+(use-package company-prescient
+  :after (company prescient)
 
-(add-hook 'after-init-hook 'global-company-mode)
+  :preface
+  (eval-when-compile
+    (declare-function company-prescient-mode nil))
 
-(setq company-idle-delay .1)
+  :config
+  (company-prescient-mode t))
 
-(with-eval-after-load 'company
-  (company-flx-mode +1))
 
-(require 'company-lsp)
-(push 'company-lsp company-backends)
+(use-package company-c-headers)
+(use-package company-irony-c-headers)
+(use-package company-irony)
+
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-c-headers))
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony-c-headers))
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony))
+
+
