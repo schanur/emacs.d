@@ -23,13 +23,13 @@
 ;;   )
 
 (setq package-archives '(("gnu"       . "https://elpa.gnu.org/packages/")
-                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ;; ("marmalade" . "https://marmalade-repo.org/packages/")
                          ("melpa"     . "https://melpa.org/packages/")))
 
-(when (version< emacs-version "27.0.0")
-  (package-initialize))
+;; (when (version< emacs-version "27.0.0")
+;;   (package-initialize))
 
-;; (package-initialize)
+(package-initialize)
 
 (unless package-archive-contents (package-refresh-contents))
 
@@ -43,6 +43,7 @@
    auto-compile
    bitbake
    cargo
+   cargo-mode
    company
    company-anaconda
    company-c-headers
@@ -64,7 +65,7 @@
    eglot ;; required by rustic
    elpy
    emr
-   ert
+   ;; ert
    esup ;; Startup profiler.
    flx-ido
    flycheck-rust
@@ -82,6 +83,7 @@
    helm-flx
    helm-flycheck
    helm-flyspell
+   helm-fuz
    helm-fuzzy
    helm-fuzzier
    helm-fuzzy-find
@@ -173,49 +175,50 @@
 ;; smart-semicolon
 
 ;; Install themes
-;; (mapc
-;;  (lambda (package)
-;;    (unless (package-installed-p package)
-;;      (package-install package)))
-;;  '(abyss-theme
-;;    alect-themes
-;;    ample-theme
-;;    arc-dark-theme
-;;    atom-dark-theme
-;;    atom-one-dark-theme
-;;    badger-theme
-;;    brutalist-theme
-;;    challenger-deep-theme
-;;    chocolate-theme
-;;    colorless-themes
-;;    color-theme-solarized
-;;    constant-theme
-;;    cyberpunk-theme
-;;    cyberpunk-2019-theme
-;;    doom-themes
-;;    exotica-theme
-;;    green-is-the-new-black-theme
-;;    hc-zenburn-theme
-;;    horizon-theme
-;;    humanoid-themes
-;;    immaterial-theme
-;;    kaolin-themes
-;;    madhat2r-theme
-;;    material-theme
-;;    moe-theme
-;;    mood-one-theme
-;;    monokai-pro-theme
-;;    monokai-theme
-;;    naysayer-theme
-;;    nyx-theme
-;;    seti-theme
-;;    soothe-theme
-;;    spacemacs-theme
-;;    sunburn-theme
-;;    vscdark-theme
-;;    zenburn-theme
-;;    zerodark-theme)
-;;  )
+(mapc
+ (lambda (package)
+   (unless (package-installed-p package)
+     (package-install package)))
+ '(abyss-theme
+   alect-themes
+   ample-theme
+   arc-dark-theme
+   atom-dark-theme
+   atom-one-dark-theme
+   badger-theme
+   brutalist-theme
+   challenger-deep-theme
+   chocolate-theme
+   colorless-themes
+;;   color-theme-solarized
+   constant-theme
+   cyberpunk-theme
+   cyberpunk-2019-theme
+   doom-themes
+   exotica-theme
+   green-is-the-new-black-theme
+   hc-zenburn-theme
+   horizon-theme
+   humanoid-themes
+   immaterial-theme
+   ;; kaolin-themes
+   madhat2r-theme
+   material-theme
+   moe-theme
+   mood-one-theme
+   monokai-pro-theme
+   monokai-theme
+   naysayer-theme
+   nyx-theme
+   seti-theme
+   soothe-theme
+   spacemacs-theme
+   sunburn-theme
+   ;; timu-spacegrey-theme
+   vscdark-theme
+   zenburn-theme
+   zerodark-theme)
+ )
 
 
 ;; (add-to-list 'load-path (expand-file-name "~/.emacs.d/manually/irony-mode/elisp/"))
