@@ -4,20 +4,20 @@
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
 ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
 ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
+(global-set-key   (kbd "C-c h") 'helm-command-prefix)
 (global-unset-key (kbd "C-x c"))
 
 ;; (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 ;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
 ;; (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
-(global-set-key (kbd "M-x") 'helm-M-x)
+;; (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 ;; (setq helm-completion-style 'helm-fuzzy)
 ;; (setq helm-completion-style '(flex))
-(setq helm-completion-style 'emacs)
-(setq completion-styles '(helm-flex))
+;; (setq helm-completion-style 'emacs)
+;; (setq completion-styles '(helm-flex))
 
 (setq helm-recentf-fuzzy-match t
       helm-buffers-fuzzy-matching t
@@ -48,12 +48,12 @@
 (helm-projectile-on)
 
 
-(global-unset-key (kbd "C-c h /"))
-(use-package helm-fd
-  :ensure t
-  ;; :bind (:map helm-command-map
-  ;;             ("/" . 'helm-fd-fix-path))
-  )
+;; (global-unset-key (kbd "C-c h /"))
+;; (use-package helm-fd
+;;   :ensure t
+;;   ;; :bind (:map helm-command-map
+;;   ;;             ("/" . 'helm-fd-fix-path))
+;;   )
 
 
 ;; (let ((default-directory (file-name-as-directory dir)))
@@ -64,13 +64,13 @@
 ;;   )
 
 
-(setq helm-fd-cmd "fdfind")
-(defun helm-fd-fix-path ()
-  (interactive)
-  (helm-fd-1 "/home/ze/local/dev/all")
-  )
-(global-unset-key (kbd "C-c h /"))
-(global-set-key   (kbd "C-c h /") 'helm-fd-fix-path)
+;; (setq helm-fd-cmd "fdfind")
+;; (defun helm-fd-fix-path ()
+;;   (interactive)
+;;   (helm-fd-1 "/home/ze/local/dev/all")
+;;   )
+;; (global-unset-key (kbd "C-c h /"))
+;; (global-set-key   (kbd "C-c h /") 'helm-fd-fix-path)
 
 ;; (use-package helm-youtube
 ;;   :ensure t

@@ -5,13 +5,13 @@
 
 
 ;; Use heuristics to detect indentation of file.
-(use-package dtrt-indent
-  :ensure t
-  :diminish dtrt-indent-mode
-  ;; :straight t
+;; (use-package dtrt-indent
+;;   :ensure t
+;;   :diminish dtrt-indent-mode
+;;   ;; :straight t
 
-  :init
-  (add-hook 'conf-mode-hook 'dtrt-indent-mode)
-  (add-hook 'text-mode-hook 'dtrt-indent-mode)
-  (add-hook 'prog-mode-hook 'dtrt-indent-mode))
+;;   :init
+;;   (add-hook 'conf-mode-hook 'dtrt-indent-mode)
+;;   (add-hook 'text-mode-hook 'dtrt-indent-mode)
+;;   (add-hook 'prog-mode-hook 'dtrt-indent-mode))
 

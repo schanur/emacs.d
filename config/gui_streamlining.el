@@ -84,7 +84,7 @@
   (
    (setq linum-format "%4d\u2502    ")
    ;; (setq linum-format "%d  ")
-
+as
    ;; Activate line numbers in all programming mode. Using
    ;; (global-linum-mode) took too much space in minimap buffer.
    (add-hook 'prog-mode-hook 'linum-mode)
@@ -106,11 +106,11 @@
 (setq column-number-mode t)
 
 ;; ;; Set fonts
-;; ;; (set-face-attribute 'default   nil :font "Ubuntu Mono-17")
+;; (set-face-attribute 'default   nil :font "Ubuntu Mono-17")
 ;; (set-face-attribute 'default   nil :font "Ubuntu Mono-28")
 ;; ;; (set-face-attribute 'default   nil :font "Terminus-20")
-;; ;; (set-face-attribute 'default   nil :font "Terminus-17")
-;; ;; (set-face-attribute 'default   nil :font "Fira Code-16")
+(set-face-attribute 'default   nil :font "Terminus-20")
+;; (set-face-attribute 'default   nil :font "Fira Code-16")
 ;; ;; (set-face-attribute 'default   nil :font "Fira Code-16")
 ;; ;; (set-face-attribute 'default   nil :font "Fira Code-20")
 
@@ -167,7 +167,7 @@
 
 
 
-;; Show search summary in mode lien (for example results found in
+;; Show search summary in mode line (for example results found in
 ;; current buffer).
 (use-package anzu
   :ensure t

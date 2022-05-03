@@ -14,6 +14,7 @@
   (setq company-selection-wrap-around t)
   (setq company-tooltip-flip-when-above t)
   (setq company-tooltip-align-annotations t)
+  (setq company-tooltip-minimum-width 30)
 
   :bind
   (:map company-active-map

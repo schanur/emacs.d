@@ -5,6 +5,9 @@
 ;;; Code:
 
 
+(setq-default tab-width 4)
+
+
 (use-package abbrev
   :config
   (setq save-abbrevs 'silently)
@@ -58,3 +61,6 @@
 
   :init
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+
+
+(require 'lsp-mode)
