@@ -22,6 +22,7 @@
 ;;    )
 ;;   )
 
+
 (setq package-archives '(("gnu"       . "https://elpa.gnu.org/packages/")
                          ;; ("marmalade" . "https://marmalade-repo.org/packages/")
                          ("melpa"     . "https://melpa.org/packages/")))
@@ -51,9 +52,8 @@
    company-fuzzy
    company-irony
    company-irony-c-headers
-   company-lsp
+   ;; company-lsp
    company-php
-   company-racer
    company-shell
    company-statistics
    ;; company-tern
@@ -70,9 +70,9 @@
    flx-ido
    flycheck-rust
    flycheck-irony
-   gitattributes-mode
-   gitconfig-mode
-   gitignore-mode
+   ;; gitattributes-mode
+   ;; gitconfig-mode
+   ;; gitignore-mode
    helm
    helm-ag
    helm-cscope
@@ -127,7 +127,6 @@
    powerthesaurus
    projectile
    projectile-ripgrep
-   racer
    rainbow-delimiters
    realgud
    realgud-lldb
@@ -148,7 +147,7 @@
    web-mode-edit-element
    which-key
    ;; whitespace
-   xah-lookup
+   ;; xah-lookup
    xcscope
    visual-regexp
    ;; yasnippet
@@ -182,7 +181,7 @@
  '(abyss-theme
    alect-themes
    ample-theme
-   arc-dark-theme
+   ;; arc-dark-theme
    atom-dark-theme
    atom-one-dark-theme
    badger-theme

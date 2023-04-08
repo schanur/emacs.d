@@ -1,38 +1,3 @@
-
-;; ;; (add-hook 'rust-mode-hook 'flycheck-mode)
-
-;; ;; (define-key yas-minor-mode-map [(tab)] nil)
-;; ;; (define-key yas-minor-mode-map (kbd "TAB") nil)
-
-
-;; (setq lsp-rust-server 'rust-analyzer) ;; deprecated
-;; ;; (setq rustic-lsp-server 'rust-analyzer)
-;; (setq lsp-prefer-capf t)
-;; ;; Rustic, LSP
-
-;; (use-package flycheck
-;;   :ensure t
-;;   )
-
-;; ;; (use-package rustic
-;; ;;   :ensure t
-;; ;;   )
-
-;; (use-package lsp-ui
-;;   :ensure t
-;;   )
-
-;; (use-package helm-lsp
-;;   :ensure t
-;;   :config
-;;   (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))
-
-
-;; (use-package lsp-mode
-;;     :hook (rust-mode . lsp-deferred)
-;;     :commands (lsp lsp-deferred))
-
-
 ;; When using this directly, you will need to have use-package installed:
 ;; M-x package-install, select use-package. But if you start via
 ;; `standalone.el', this is being taken care of automatically.
@@ -40,7 +5,6 @@
 
 ;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ;; rustic = basic rust-mode + additions
-
 
 (use-package rustic
   :ensure
@@ -63,16 +27,19 @@
   ;; (setq lsp-signature-auto-activate nil)
 
   ;; comment to disable rustfmt on save
-  (setq rustic-format-on-save t)
   (add-hook 'rustic-mode-hook 'rk/rustic-mode-hook))
 
 (defun rk/rustic-mode-hook ()
-  ;; so that run C-c C-c C-r works without having to confirm
-  (setq-local buffer-save-without-query t))
+  ;; so that run C-c C-c C-r works without having to confirm, but don't try to
+  ;; save rust buffers that are not file visiting. Once
+  ;; https://github.com/brotzeit/rustic/issues/253 has been resolved this should
+  ;; no longer be necessary.
+  (when buffer-file-name
+    (setq-local buffer-save-without-query t))
+  (add-hook 'before-save-hook 'lsp-format-buffer nil t))
 
 ;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ;; for rust-analyzer integration
-
 
 (use-package lsp-mode
   :ensure
@@ -82,35 +49,26 @@
   (lsp-rust-analyzer-cargo-watch-command "clippy")
   (lsp-eldoc-render-all t)
   (lsp-idle-delay 0.6)
+  ;; This controls the overlays that display type and other hints inline. Enable
+  ;; / disable as you prefer. Well require a `lsp-workspace-restart' to have an
+  ;; effect on open projects.
   (lsp-rust-analyzer-server-display-inlay-hints t)
-  (lsp-lens-enable t)
-  (lsp-eldoc-enable-hover t)
-  (lsp-modeline-diagnostics-enable t)
-  (lsp-modeline-code-actions-enable t)
-  (lsp-signature-render-documentation t)
+  (lsp-rust-analyzer-display-lifetime-elision-hints-enable "skip_trivial")
+  (lsp-rust-analyzer-display-chaining-hints t)
+  (lsp-rust-analyzer-display-lifetime-elision-hints-use-parameter-names nil)
+  (lsp-rust-analyzer-display-closure-return-type-hints t)
+  (lsp-rust-analyzer-display-parameter-hints nil)
+  (lsp-rust-analyzer-display-reborrow-hints nil)
   :config
-  (add-hook 'rust-mode-hook #'lsp)
-  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
-  )
-
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 
 (use-package lsp-ui
   :ensure
   :commands lsp-ui-mode
   :custom
   (lsp-ui-peek-always-show t)
-  (lsp-ui-sideline-enable t)
   (lsp-ui-sideline-show-hover t)
-  (lsp-ui-doc-show-with-mouse t)
-  (lsp-ui-doc-enable t)
-  )
-
-;; (let* ((text " abcd")
-;;        (len (length text))
-;;        )
-;;   (add-text-properties 0 len '(font-lock-face (error lsp-ui-sideline-global)) text)
-;;   (add-text-properties 0 1 `(display (space :align-to (- text (,(1- len) . width)))) text)
-;;   (insert "\n" (format "%S" text) "\n" text "\n"))
+  (lsp-ui-doc-enable nil))
 
 
 ;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -132,21 +90,14 @@
 (use-package company
   :ensure
   :bind
-  ;; (:map company-active-map
-  ;;             ("C-n". company-select-next)
-  ;;             ("C-p". company-select-previous)
-  ;;             ("M-<". company-select-first)
-  ;;             ("M->". company-select-last))
-
-  ;; (:map company-mode-map
-  ;;       ("<tab>". tab-indent-or-complete)
-  ;;       ("TAB". tab-indent-or-complete))
-  )
-
-(use-package helm-lsp
-  :ensure t
-  :config
-  (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))
+  (:map company-active-map
+              ("C-n". company-select-next)
+              ("C-p". company-select-previous)
+              ("M-<". company-select-first)
+              ("M->". company-select-last))
+  (:map company-mode-map
+        ("<tab>". tab-indent-or-complete)
+        ("TAB". tab-indent-or-complete)))
 
 (defun company-yasnippet-or-completion ()
   (interactive)
@@ -177,6 +128,12 @@
 
 
 ;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+;; Create / cleanup rust scratch projects quickly
+
+(use-package rust-playground :ensure)
+
+
+;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ;; for Cargo.toml and other config files
 
 (use-package toml-mode :ensure)
@@ -185,30 +142,29 @@
 ;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ;; setting up debugging support with dap-mode
 
-;; (use-package exec-path-from-shell
-;;   :ensure
-;;   :init (exec-path-from-shell-initialize))
+(use-package exec-path-from-shell
+  :ensure
+  :init (exec-path-from-shell-initialize))
 
-;; (when (executable-find "lldb-mi")
-;;   (use-package dap-mode
-;;     :ensure
-;;     :config
-;;     (dap-ui-mode)
-;;     (dap-ui-controls-mode 1)
+(when (executable-find "lldb-mi")
+  (use-package dap-mode
+    :ensure
+    :config
+    (dap-ui-mode)
+    (dap-ui-controls-mode 1)
 
-;;     (require 'dap-lldb)
-;;     (require 'dap-gdb-lldb)
-;;     ;; installs .extension/vscode
-;;     (dap-gdb-lldb-setup)
-;;     (dap-register-debug-template
-;;      "Rust::LLDB Run Configuration"
-;;      (list :type "lldb"
-;;            :request "launch"
-;;            :name "LLDB::Run"
-;;            :gdbpath "rust-lldb"
-;;            ;; uncomment if lldb-mi is not in PATH
-;;            ;; :lldbmipath "path/to/lldb-mi"
-;;            ))))
-
+    (require 'dap-lldb)
+    (require 'dap-gdb-lldb)
+    ;; installs .extension/vscode
+    (dap-gdb-lldb-setup)
+    (dap-register-debug-template
+     "Rust::LLDB Run Configuration"
+     (list :type "lldb"
+           :request "launch"
+           :name "LLDB::Run"
+           :gdbpath "rust-lldb"
+           ;; uncomment if lldb-mi is not in PATH
+           ;; :lldbmipath "path/to/lldb-mi"
+           ))))
 
 (setq rust-indent-offset 4)
