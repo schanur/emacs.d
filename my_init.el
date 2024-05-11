@@ -30,7 +30,7 @@
 ;; (when (version< emacs-version "27.0.0")
 ;;   (package-initialize))
 
-(package-initialize)
+;; (package-initialize)
 
 (unless package-archive-contents (package-refresh-contents))
 
