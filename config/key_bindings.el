@@ -17,3 +17,4 @@
 
 (global-set-key (kbd "<f9>")  'helm-projectile-find-file)
 (global-set-key (kbd "<f10>") 'helm-projectile-rg)
+(global-set-key (kbd "<f12>") 'org-cycle)
