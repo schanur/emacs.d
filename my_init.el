@@ -53,7 +53,7 @@
    company-irony
    company-irony-c-headers
    ;; company-lsp
-   company-php
+   ;; company-php
    company-shell
    company-statistics
    ;; company-tern
