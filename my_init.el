@@ -57,7 +57,7 @@
    ;; company-shell
    company-statistics
    ;; company-tern
-   company-rtags
+   ;; company-rtags
    company-web
    diff-hl
    dtrt-indent
