@@ -58,7 +58,7 @@
    company-statistics
    ;; company-tern
    ;; company-rtags
-   company-web
+   ;; company-web
    diff-hl
    dtrt-indent
    dumb-jump
