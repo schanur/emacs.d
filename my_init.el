@@ -54,7 +54,7 @@
    company-irony-c-headers
    ;; company-lsp
    ;; company-php
-   company-shell
+   ;; company-shell
    company-statistics
    ;; company-tern
    company-rtags
